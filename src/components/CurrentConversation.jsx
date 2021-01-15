@@ -26,15 +26,20 @@ function CurrentConversation(props) {
 
     function handleSubmit() {
         axios.post(`http://localhost:8000/api/messages`, { selectedConversation, newMessage })
-            .then(() => setNewMessage())
+            .then(setNewMessage(""))
             .then(() => setRefresh(!refresh))
+    }
+
+    function handleClose() {
+        axios.put((`http://localhost:8000/api/conversations/${selectedConversation}`))
     }
 
 
     return (
         <div>
+            <button onClick={() => handleClose()}>X</button>
             {messages.map(message => <p>{message.content}</p>)}
-            <input type="text" placeholder="Votre message (500 caractères max)" onChange={handleChange} />
+            <input type="text" placeholder="Votre message (500 caractères max)" value={newMessage} onChange={handleChange} />
             <button onClick={newMessage ? () => handleSubmit() : null}>Envoyer</button>
         </div>
     )
