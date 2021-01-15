@@ -5,10 +5,10 @@ import CurrentConversation from './CurrentConversation';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-function Home() {
-
-    const [conversations, setConversations] = useState([])
-    const [selectedConversation, setSelectedConversation] = useState()
+function Home(props) {
+    const refresh = props.refresh;
+    const [conversations, setConversations] = useState([]);
+    const [selectedConversation, setSelectedConversation] = useState();
 
     useEffect(() => {
         function getConversations() {
@@ -18,7 +18,7 @@ function Home() {
         }
 
         getConversations();
-    }, []);
+    }, [refresh]);
 
     return (
         <div>
