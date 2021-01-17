@@ -13,7 +13,7 @@ function CurrentConversation(props) {
 
     useEffect(() => {
         function getMessages() {
-            axios.get(`http://localhost:8000/api/messages/${selectedConversation}`)
+            axios.get(`${API_URL}/api/messages/${selectedConversation}`)
                 .then((res) => res.data)
                 .then((data) => { setMessages(data) });
         }
@@ -26,13 +26,13 @@ function CurrentConversation(props) {
     }
 
     function handleSubmit() {
-        axios.post(`http://localhost:8000/api/messages`, { selectedConversation, newMessage })
+        axios.post(`${API_URL}/api/messages`, { selectedConversation, newMessage })
             .then(setNewMessage(""))
             .then(() => setRefresh(!refresh))
     }
 
     function handleClose() {
-        axios.put(`http://localhost:8000/api/conversations/${selectedConversation}`)
+        axios.put(`${API_URL}/api/conversations/${selectedConversation}`)
             .then(() => setSelectedConversation())
     }
 

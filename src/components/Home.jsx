@@ -12,7 +12,7 @@ function Home(props) {
 
     useEffect(() => {
         function getConversations() {
-            axios.get(`http://localhost:8000/api/conversations/open`)
+            axios.get(`${API_URL}/api/conversations/open`)
                 .then((res) => res.data)
                 .then((data) => { setConversations(data) });
         }

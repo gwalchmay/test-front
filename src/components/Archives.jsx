@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Modal, useModal, ModalTransition, } from 'react-simple-hook-modal';
 import 'react-simple-hook-modal/dist/styles.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Archives() {
 
     const [conversations, setConversations] = useState([]);
@@ -10,8 +12,8 @@ function Archives() {
     const { isModalOpen, openModal, closeModal } = useModal();
     const [messages, setMessages] = useState([]);
 
-    const getConversations = () => axios.get(`http://localhost:8000/api/conversations`)
-    const getMessages = () => axios.get(`http://localhost:8000/api/messages/${selectedArchivedConversation}`)
+    const getConversations = () => axios.get(`${API_URL}/api/conversations`)
+    const getMessages = () => axios.get(`${API_URL}/api/messages/${selectedArchivedConversation}`)
 
     useEffect(() => {
         function getConversationsAndMessages() {
