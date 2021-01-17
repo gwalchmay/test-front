@@ -1,0 +1,104 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.home {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.navbarLinks>a{
+  margin-right: 5px;
+  margin-left: 5px;  
+}
+
+.conversationList {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.currentConversation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 5px;
+}
+
+.currentConversation p:nth-child(2n+1) {
+  align-self: flex-start;
+  background: lightgray;
+  min-height: 2rem;
+  border-radius: 4px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.currentConversation p:nth-child(2n) {
+  align-self: flex-end;
+  background: lightskyblue;
+  min-height: 2rem;
+  border-radius: 4px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.conversationButton {
+  background-color: white;
+  height: 30px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.closeButton {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 2em;
+  align-self: flex-end;
+}
+
+.conversationInput {
+  width: 300px;
+}

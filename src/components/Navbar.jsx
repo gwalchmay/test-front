@@ -12,10 +12,12 @@ function Navbar(props) {
     }
 
     return (
-        <div>
-            <Link to='/'>Accueil</Link>
-            <Link to='/archives'>Conversations archivées</Link>
-            <button onClick={() => handleCreate()}>Créer une conversation</button>
+        <div className="navbar">
+            <div className="navbarLinks">
+                <Link to='/'>Accueil</Link>
+                <Link to='/archives'>Conversations archivées</Link>
+            </div>
+            <button className="conversationButton" onClick={() => handleCreate()}>Créer une conversation</button>
         </div>
     )
 }

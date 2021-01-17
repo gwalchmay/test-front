@@ -18,12 +18,12 @@ function Home(props) {
         }
 
         getConversations();
-    }, [refresh]);
+    }, [refresh, selectedConversation]);
 
     return (
-        <div>
-            <ConversationList conversations={conversations} setSelectedConversation={setSelectedConversation} />
-            {selectedConversation ? <CurrentConversation selectedConversation={selectedConversation} /> : null}
+        <div className="home">
+            <ConversationList conversations={conversations} selectedConversation={selectedConversation} setSelectedConversation={setSelectedConversation} />
+            {selectedConversation ? <CurrentConversation selectedConversation={selectedConversation} setSelectedConversation={setSelectedConversation} /> : null}
         </div>
     )
 

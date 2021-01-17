@@ -6,6 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 function CurrentConversation(props) {
     const selectedConversation = props.selectedConversation;
+    const setSelectedConversation = props.setSelectedConversation;
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState();
     const [refresh, setRefresh] = useState(false);
@@ -31,15 +32,20 @@ function CurrentConversation(props) {
     }
 
     function handleClose() {
-        axios.put((`http://localhost:8000/api/conversations/${selectedConversation}`))
+        axios.put(`http://localhost:8000/api/conversations/${selectedConversation}`)
+            .then(() => setSelectedConversation())
     }
+
+    function handleKeypress(e) {
+        if (e.charCode === 13) { handleSubmit(); }
+    };
 
 
     return (
-        <div>
-            <button onClick={() => handleClose()}>X</button>
+        <div className="currentConversation">
+            <button className="closeButton" onClick={() => handleClose()}>✖</button>
             {messages.map(message => <p>{message.content}</p>)}
-            <input type="text" placeholder="Votre message (500 caractères max)" value={newMessage} onChange={handleChange} />
+            <input className="conversationInput" type="text" placeholder="Votre message (500 caractères max)" value={newMessage} onChange={handleChange} onKeyPress={newMessage ? handleKeypress : null} />
             <button onClick={newMessage ? () => handleSubmit() : null}>Envoyer</button>
         </div>
     )

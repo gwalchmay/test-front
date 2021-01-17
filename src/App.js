@@ -9,15 +9,17 @@ function App() {
   const [refresh, setRefresh] = useState(false);
 
   return (
-    <BrowserRouter>
-      <Navbar refresh={refresh} setRefresh={setRefresh} />
-      <Switch>
-        <Route exact path="/">
-          <Home refresh={refresh} />
-        </Route>
-        <Route exact path="/archives" component={Archives} />
-      </Switch>
-    </BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
+        <Navbar refresh={refresh} setRefresh={setRefresh} />
+        <Switch>
+          <Route exact path="/">
+            <Home refresh={refresh} />
+          </Route>
+          <Route exact path="/archives" component={Archives} />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

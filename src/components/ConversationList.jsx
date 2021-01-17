@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
 function ConversationList(props) {
     const conversations = props.conversations;
+    const selectedConversation = props.selectedConversation;
     const setSelectedConversation = props.setSelectedConversation;
 
     return (
-        <div>
-            {conversations.map(conversation => <button onClick={() => setSelectedConversation(conversation.id)}>Conversation {conversation.id}</button>)}
+        <div className="conversationList">
+            {conversations.map(conversation => <button className="conversationButton" onClick={() => setSelectedConversation(conversation.id)}>Conversation {conversation.id}</button>)}
         </div>
     )
 
