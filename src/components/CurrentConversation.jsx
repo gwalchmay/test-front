@@ -42,7 +42,7 @@ function CurrentConversation(props) {
 
 
     return (
-        <div className="currentConversation">
+        <div className="conversation">
             <button className="closeButton" onClick={() => handleClose()}>✖</button>
             {messages.map(message => <p>{message.content}</p>)}
             <input className="conversationInput" type="text" placeholder="Votre message (500 caractères max)" value={newMessage} onChange={handleChange} onKeyPress={newMessage ? handleKeypress : null} />

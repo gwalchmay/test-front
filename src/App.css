@@ -37,7 +37,7 @@
   min-width: 300px;
 }
 
-.currentConversation {
+.conversation {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -48,9 +48,10 @@
   border-style: solid;
   border-width: 1px;
   margin-left: 5px;
+  border-color: black;
 }
 
-.currentConversation p:nth-child(2n+1) {
+.conversation p:nth-child(2n+1) {
   align-self: flex-start;
   background: lightgray;
   min-height: 2rem;
@@ -64,7 +65,7 @@
   padding-top: 5px;
 }
 
-.currentConversation p:nth-child(2n) {
+.conversation p:nth-child(2n) {
   align-self: flex-end;
   background: lightskyblue;
   min-height: 2rem;
@@ -89,6 +90,18 @@
   margin-right: 5px;
 }
 
+.archivedConversations{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.archivedConversations>button{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
 .closeButton {
   border: 0;
   background: none;
@@ -101,4 +114,17 @@
 
 .conversationInput {
   width: 300px;
+}
+
+input{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+button{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
 }
